@@ -19,10 +19,16 @@ value = '<?php echo$users[0]->name; ?>'/> </td>
 <input type = 'text' name = 'email'
 value = '<?php echo$users[0]->email; ?>'/> </td>
 </tr>
+<tr>
+<td> Password</td>
+<td>
+<input type = 'password' name = 'password'
+value = '<?php echo$users[0]->password; ?>'/> </td>
+</tr>
 
 
 <td colspan = '2'>
-<input type = 'submit' value = "Update student" />
+<input type = 'submit' value = "Update account" />
 </td>
 </tr>
 </table>

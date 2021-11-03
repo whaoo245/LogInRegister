@@ -7,6 +7,7 @@ use App\Models\User;
 use DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Hash;
 
 class HomeController extends Controller
 {
@@ -44,6 +45,10 @@ class HomeController extends Controller
             $users = User::find($id);
             $users->name = $request->input('name');
             $users->email = $request->input('email');
+            //$users->password = $request->input('password');
+            $hPassword = Hash::make($request->input('password'));
+            $users->password = $hPassword;
+            
             $users->update();
             echo "Record updated successfully.<br/>";
             echo '<a href = "/table">Click Here</a> to go back.';
